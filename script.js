@@ -16,7 +16,7 @@ document.addEventListener("mousemove", (event) => {
 function createApple() {
   const apple = document.createElement("div");
   apple.classList.add("apple");
-  apple.style.left = Math.random() * (gameArea.clientWidth - 3) + "px";
+  apple.style.left = Math.random() * (gameArea.clientWidth - 0.5) + "px";
   gameArea.appendChild(apple);
   fallApple(apple);
 }
