@@ -16,7 +16,7 @@ document.addEventListener("mousemove", (event) => {
 function createApple() {
   const apple = document.createElement("div");
   apple.classList.add("apple");
-  apple.style.left = Math.random() * (gameArea.clientWidth - 30) + "px";
+  apple.style.left = Math.random() * (gameArea.clientWidth - ) + "px";
   gameArea.appendChild(apple);
   fallApple(apple);
 }
@@ -30,7 +30,7 @@ function fallApple(apple) {
       clearInterval(appleFallInterval);
       apple.remove();
     } else {
-      apple.style.top = apple.offsetTop + 5 + "px";
+      apple.style.top = apple.offsetTop + 1 + "px";
     }
 
     if (
@@ -43,7 +43,7 @@ function fallApple(apple) {
       score++;
       scoreDisplay.textContent = "Score: " + score;
     }
-  }, 100);
+  }, 200);
 }
 
 setInterval(createApple, 1000);
