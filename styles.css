@@ -3,14 +3,14 @@ body {
     flex-direction: column;
     align-items: center;
     background-image: url(Images/Background\ image.png);
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-       font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 #gameArea {
     position: relative;
-    width: 400px;
+    width: 600px;
     height: 600px;
     border: 1px solid #000;
     overflow: hidden;
@@ -21,16 +21,26 @@ body {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    width: 80px;
-    height: 20px;
-    background-color: #8B4513;
+    width: 120px;
+    height: 40px;
+    /*background-color: brown ;*/
+    background-image: url(Images/Elements/Basket.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     transform: translateX(-50%);
+    background-position: center;
+   
 }
 
 .apple {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: red;
-    border-radius: 50%;
+    width: 60px;
+    height: 40px;
+    /*background-color: red;
+    border-radius: 50%;*/
+    background-image:url(Images/Elements/4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    background-position: center;
 }

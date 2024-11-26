@@ -6,17 +6,17 @@ const basket = document.getElementById("basket");
 document.addEventListener("mousemove", (event) => {
   const basketRect = basket.getBoundingClientRect();
   const mouseX = event.clientX - gameArea.getBoundingClientRect().left;
-  basket.style.left =
-    Math.min(
-      Math.max(mouseX - basketRect.width / 2, 0),
-      gameArea.clientWidth - basketRect.width
+  basket.style.left = Math.min(
+      Math.max(mouseX, basketRect.width / 2),
+      gameArea.clientWidth - basketRect.width/2
     ) + "px";
 });
 
 function createApple() {
   const apple = document.createElement("div");
   apple.classList.add("apple");
-  apple.style.left = Math.random() * (gameArea.clientWidth - 0.5) + "px";
+  apple.style.left = Math.random() * (gameArea.clientWidth - 30) + "px";
+  apple.style.top = "0px";
   gameArea.appendChild(apple);
   fallApple(apple);
 }
@@ -30,7 +30,7 @@ function fallApple(apple) {
       clearInterval(appleFallInterval);
       apple.remove();
     } else {
-      apple.style.top = apple.offsetTop + 1 + "px";
+      apple.style.top = apple.offsetTop + 10 + "px";
     }
 
     if (
