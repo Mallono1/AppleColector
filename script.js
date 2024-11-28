@@ -51,6 +51,7 @@ function fallApple(apple) {
         appleSpawnTime = Number.POSITIVE_INFINITY;
       }
     } else {
+
       apple.style.top = apple.offsetTop + distanceDelta + "px";
     }
 
@@ -66,6 +67,7 @@ function fallApple(apple) {
       appleSpeed = appleSpeed + appleSpeedGain;
       appleSpawnTime = Math.max(appleSpawnTime - appleSpawnTimeGain, maxAppleSpawnTime);
     }
+
     lastUpdate = Date.now();
   }, 1000 / targetFps);
 }
