@@ -1,7 +1,16 @@
 let score = 0;
 const gameArea = document.getElementById("gameArea");
 const scoreDisplay = document.getElementById("score");
+const heartsDisplay = document.getElementById("hearts");
 const basket = document.getElementById("basket");
+const targetFps = 60;   
+let appleSpeed = 100;
+const appleSpeedGain = 5;
+let lastAppleSpawnTime = Date.now();
+let appleSpawnTime = 1000;
+const appleSpawnTimeGain = 10;
+const maxAppleSpawnTime = 300;
+let hearts = 5;
 
 document.addEventListener("mousemove", (event) => {
   const basketRect = basket.getBoundingClientRect();
@@ -13,24 +22,37 @@ document.addEventListener("mousemove", (event) => {
 });
 
 function createApple() {
+  if (Date.now() - lastAppleSpawnTime < appleSpawnTime) return;
   const apple = document.createElement("div");
   apple.classList.add("apple");
   apple.style.left = Math.random() * (gameArea.clientWidth - 30) + "px";
   apple.style.top = "0px";
   gameArea.appendChild(apple);
   fallApple(apple);
+  lastAppleSpawnTime = Date.now();
 }
 
 function fallApple(apple) {
+  let lastUpdate = Date.now();
   let appleFallInterval = setInterval(() => {
     const appleRect = apple.getBoundingClientRect();
     const basketRect = basket.getBoundingClientRect();
-
+    const distanceDelta = (Date.now() - lastUpdate) / 1000 * appleSpeed;     
+    
     if (appleRect.bottom >= gameArea.getBoundingClientRect().bottom) {
       clearInterval(appleFallInterval);
       apple.remove();
+      hearts--;
+      heartsDisplay.textContent = '♥ '.repeat(hearts).trim();
+      if (hearts <= 0)
+      {
+        //TODO gameover
+        appleSpeed = 0;
+        appleSpawnTime = Number.POSITIVE_INFINITY;
+      }
     } else {
-      apple.style.top = apple.offsetTop + 10 + "px";
+
+      apple.style.top = apple.offsetTop + distanceDelta + "px";
     }
 
     if (
@@ -42,8 +64,12 @@ function fallApple(apple) {
       apple.remove();
       score++;
       scoreDisplay.textContent = "Score: " + score;
+      appleSpeed = appleSpeed + appleSpeedGain;
+      appleSpawnTime = Math.max(appleSpawnTime - appleSpawnTimeGain, maxAppleSpawnTime);
     }
-  }, 200);
+
+    lastUpdate = Date.now();
+  }, 1000 / targetFps);
 }
 
-setInterval(createApple, 2500);
+setInterval(createApple, 10);

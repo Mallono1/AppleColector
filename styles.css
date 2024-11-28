@@ -8,12 +8,15 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+
     font-family: Arial, sans-serif;
 }
 
 #gameArea {
     position: relative;
     width: 600px;
+
     height: 700px;
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -21,6 +24,8 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     overflow: hidden;
 }
+
+#gameOver {}
 
 #basket {
     position: absolute;
@@ -48,7 +53,7 @@ body {
     background-repeat: no-repeat;
     border: none;
     background-position: center;
-    
+ 
 }
 
 #score {
@@ -68,8 +73,8 @@ body {
 
 #lives {
     position: absolute;
-    top: 10px; /* Mesma linha que o score */
-    right: 10px; /* No lado direito */
+    top: 10px; 
+    right: 10px; 
     font-size: 24px;
     font-weight: bold;
     color: white;
