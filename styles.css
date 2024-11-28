@@ -18,7 +18,9 @@ body {
     text-align: center;
 }
 
-#gameOver {}
+#gameOver {
+    display: none;
+}
 
 #basket {
     position: absolute;
