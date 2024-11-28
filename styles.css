@@ -1,20 +1,25 @@
 body {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-image: url(Images/Background\ image.png);
-    background-size: 100%;
+    height: 100vh;
+    margin: 0;
+    background-image: url(Images/Background-image.png);
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     font-family: Arial, sans-serif;
 }
 
 #gameArea {
     position: relative;
     width: 600px;
-    height: 600px;
-    border: 1px solid #000;
+    height: 700px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
 }
 
 #basket {
@@ -43,4 +48,37 @@ body {
     background-repeat: no-repeat;
     border: none;
     background-position: center;
+    
 }
+
+#score {
+    position: absolute;
+    top: 10px; /* Distance from top */
+    left: 10px; /* Distance from left */
+    font-size: 24px; 
+    font-weight: bold; 
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px 20px; /* Internal spacing */
+    border-radius: 10px; /* Rounded edges */
+    border: 2px solid white; /* Borders for highlighting */
+    z-index: 10; /* Make sure it stays on top of the game */
+    font-family: Arial, sans-serif; 
+}
+
+#lives {
+    position: absolute;
+    top: 10px; /* Mesma linha que o score */
+    right: 10px; /* No lado direito */
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    z-index: 10;
+    font-family: Arial, sans-serif;
+}
+
+

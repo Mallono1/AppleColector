@@ -46,4 +46,4 @@ function fallApple(apple) {
   }, 200);
 }
 
-setInterval(createApple, 1000);
+setInterval(createApple, 2500);
