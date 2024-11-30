@@ -6,12 +6,29 @@
     <title>Catch the Apples Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<!--<style>
+    .restart-button {
+        display: none;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    width: 120px;
+    height: 40px;
+    /*background-color: brown ;*/
+    background-image: url(Images/Elements/Restart.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+    background-position: center;
+    cursor: pointer;
+        }
+</style>-->
 <body>
     <div id="gameArea">
-        <section id="gameOver">
-        <div id="gameOver">Game over!</div>
-    </section>
+        <div id="gameOver">Game Over!</div>
         <div id="basket"></div>
+        <div id="restart-button"></div>
+        <a href="game.html" class="restart-button"></a>
     </div>
     <div id="score">Score: 0</div>
     <div id="hearts">♥ ♥ ♥ ♥ ♥</div>

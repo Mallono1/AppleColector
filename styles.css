@@ -13,6 +13,35 @@ body {
 
     font-family: Arial, sans-serif;
 }
+#gameOver {
+    
+    display: none;
+    position: absolute;
+    top: 80px; 
+    left: 26%;
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-size: 48px; 
+    font-weight: bold; 
+    color: rgb(246, 1, 1);
+    background-position: center;
+       
+}
+#restart-button {
+    display: none;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    width: 240px;
+    height: 80px;
+    /*background-color: brown ;*/
+    background-image: url(Images/Elements/Restart.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+    background-position: center;
+    cursor: pointer;
+}
 
 #gameArea {
     position: relative;
@@ -25,9 +54,7 @@ body {
     overflow: hidden;
 }
 
-#gameOver {
-    display: none;
-}
+
 
 #basket {
     position: absolute;
@@ -57,6 +84,7 @@ body {
     background-position: center;
  
 }
+
 
 #score {
     position: absolute;
