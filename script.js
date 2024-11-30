@@ -8,6 +8,7 @@ const restartButton = document.getElementById("restartButton");
 const startButton = document.getElementById("startButton");
 const startScreen = document.getElementById("startScreen");
 const gameScreen = document.getElementById("gameScreen");
+const gameOverScore = document.getElementById("finalScore");
 
 const targetFps = 60;
 let appleSpeed = 100;
@@ -23,7 +24,7 @@ function showScreen(screen) {
   document.querySelectorAll(".screen").forEach((scr) => {
     scr.classList.remove("active");
   });
-  screen.classList.add("active"); 
+  screen.classList.add("active");
 }
 
 // Basket moving
@@ -80,7 +81,7 @@ function fallApple(apple) {
       clearInterval(appleFallInterval);
       apple.remove();
       score++;
-      scoreDisplay.textContent = "Score: " + score;
+      scoreDisplay.textContent = score;
       appleSpeed += appleSpeedGain;
       appleSpawnTime = Math.max(
         appleSpawnTime - appleSpawnTimeGain,
@@ -97,7 +98,8 @@ function gameOver() {
   clearInterval(gameInterval);
   const apples = document.querySelectorAll(".apple");
   apples.forEach((apple) => apple.remove());
-  showScreen(gameOverScreen); 
+  gameOverScore.innerHTML = score;
+  showScreen(gameOverScreen);
 }
 
 // Restart Game
@@ -106,7 +108,7 @@ restartButton.addEventListener("click", () => {
   hearts = 5;
   appleSpeed = 100;
   appleSpawnTime = 1000;
-  scoreDisplay.textContent = "Score: 0";
+  scoreDisplay.textContent = "0";
   heartsDisplay.textContent = "♥ ♥ ♥ ♥ ♥";
   showScreen(gameScreen);
   startGame();
