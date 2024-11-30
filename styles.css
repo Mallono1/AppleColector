@@ -9,52 +9,41 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-
     font-family: Arial, sans-serif;
 }
-#gameOver {
-    
-    display: none;
+
+.screen {
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
     position: absolute;
-    top: 80px; 
-    left: 26%;
-    margin-top: 10px;
-    font-size: 1.2em;
-    font-size: 48px; 
-    font-weight: bold; 
-    color: rgb(246, 1, 1);
-    background-position: center;
-       
-}
-#restart-button {
-    display: none;
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    width: 240px;
-    height: 80px;
-    /*background-color: brown ;*/
-    background-image: url(Images/Elements/Restart.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform: translateX(-50%);
-    background-position: center;
-    cursor: pointer;
+    top: 0;
+    left: 0;
 }
 
-#gameArea {
+.screen.active {
+    display: flex; 
+}
+
+#startScreen {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+#gameScreen {
+    background-color: rgba(255, 255, 255, 0.8);
     position: relative;
-    width: 600px;
-    height: 700px;
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 600px;
+    height: 700px;
     overflow: hidden;
 }
-
-
 
 #basket {
     position: absolute;
@@ -62,72 +51,40 @@ body {
     left: 50%;
     width: 120px;
     height: 40px;
-    /*background-color: brown ;*/
     background-image: url(Images/Elements/Basket.png);
     background-size: cover;
     background-repeat: no-repeat;
     transform: translateX(-50%);
-    background-position: center;
-   
 }
 
 .apple {
     position: absolute;
     width: 60px;
     height: 40px;
-    /*background-color: red;
-    border-radius: 50%;*/
-    background-image:url(Images/Elements/4.png);
+    background-image: url(Images/Elements/4.png);
     background-size: cover;
     background-repeat: no-repeat;
-    border: none;
-    background-position: center;
- 
 }
 
-
-#score {
-    position: absolute;
-    top: 10px; /* Distance from top */
-    left: 10px; /* Distance from left */
-    font-size: 24px; 
-    font-weight: bold; 
-    color: white; /* Text color */
-    background-color: rgba(0, 0, 0, 0.7); 
-    padding: 10px 20px; /* Internal spacing */
-    border-radius: 10px; /* Rounded edges */
-    border: 2px solid white; /* Borders for highlighting */
-    z-index: 10; /* Make sure it stays on top of the game */
-    font-family: Arial, sans-serif; 
-}
-
-#lives {
-    position: absolute;
-    top: 10px; /* Mesma linha que o score */
-    right: 10px; /* No lado direito */
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+#gameOverScreen {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 2px solid white;
-    z-index: 10;
-    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 2em;
 }
-.start-button {
-    display: inline-block;
-    margin-top: 20px;
+
+#restartButton, #startButton {
     padding: 10px 20px;
-    font-size: 1.2em;
-    color: #fff;
-    background: #007BFF;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none;
-}
-.start-button:hover {
-    background: #0056b3;
+    background-color: #61dafb;
+    color: #282c34;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
+#restartButton:hover, #startButton:hover {
+    background-color: #21a1f1;
+}

@@ -3,19 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catch the Apples Game</title>
+    <title>Apple Pie Rush!</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="gameArea">
-        <section id="gameOver">
-        <div id="gameOver">Game over!</div>
-    </section>
+    <!-- Start Screen -->
+<div id="startScreen" class="screen active">
+    <h1>Apple Pie Rush!</h1>
+    <button id="startButton">Start Game</button>
+</div>
+
+<!-- Game Screen -->
+    <div id="gameScreen" class="screen hidden">
+        <div id="gameArea">
         <div id="basket"></div>
     </div>
     <div id="score">Score: 0</div>
     <div id="hearts">♥ ♥ ♥ ♥ ♥</div>
 
-    <script src="script.js"></script>
+</div>
+
+<!-- Game Over Screen -->
+
+<div id="gameOverScreen" class="screen hidden">
+    <h1>Game Over</h1>
+    <p id="finalScore">Your score: 0</p>
+    <button id="restartButton">Restart Game</button>
+  </div>
+
+
+    <script src="script.js" defer></script>
 </body>
 </html>
