@@ -28,7 +28,8 @@ function showScreen(screen) {
 
 // Basket moving
 document.addEventListener("mousemove", (event) => {
-  const mouseX = event.clientX - gameArea.getBoundingClientRect().left;
+  const gameAreaRect = gameArea.getBoundingClientRect();
+  const mouseX = event.clientX - gameAreaRect.left;
   const basketWidth = basket.offsetWidth / 2;
   basket.style.left =
     Math.min(
@@ -42,7 +43,7 @@ function createApple() {
   if (Date.now() - lastAppleSpawnTime < appleSpawnTime) return;
   const apple = document.createElement("div");
   apple.classList.add("apple");
-  apple.style.left = Math.random() * (gameArea.clientWidth - 30) + "px";
+  apple.style.left = Math.random() * (gameArea.clientWidth - 60) + "px";
   apple.style.top = "0px";
   gameArea.appendChild(apple);
   fallApple(apple);
